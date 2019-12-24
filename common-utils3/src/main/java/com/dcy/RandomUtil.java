@@ -2,16 +2,10 @@ package com.dcy;
 
 import java.util.Random;
 
-/**
- * 随机工具类
- * @Description:TODO(描述这个类的作用)   
- * @author: zhanggm1002
- * @date:   2019年12月5日 下午1:31:23
- */
 public class RandomUtil {
 	/**
 	 * @Title: random   
-	 * @Description: 获得最小数和最大数之间的随机数   
+	 * @Description: 鑾峰緱鏈�灏忔暟鍜屾渶澶ф暟涔嬮棿鐨勯殢鏈烘暟   
 	 * @param: @param min
 	 * @param: @param max
 	 * @param: @return      
@@ -24,7 +18,7 @@ public class RandomUtil {
 	}
 	/**
 	 * @Title: random   
-	 * @Description: 获得最小数和最大数之间的多个随机数
+	 * @Description: 鑾峰緱鏈�灏忔暟鍜屾渶澶ф暟涔嬮棿鐨勫涓殢鏈烘暟
 	 * @param: @param min
 	 * @param: @param max
 	 * @param: @param num

@@ -8,31 +8,26 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * ÎÄ¼ş¹¤¾ßÀà
- * @Description:·â×°ÎÄ¼şµÄ³£ÓÃ·½·¨  
- * @author: zhanggm1002
- * @date:   2019Äê12ÔÂ5ÈÕ ÏÂÎç1:27:47
- */
-public class FeilUtil {
+
+public class fileUtil {
 	/**
-	 * ¸ù¾İÎÄ¼ş£¬½ØÈ¡À©Õ¹Ãû
+	 * æ ¹æ®æ–‡ä»¶ï¼Œæˆªå–æ‰©å±•å
 	 * @param fileName "aa.png"
 	 * @return
 	 */
 	public static String getExtName(String fileName) {
-		//´¦Àí¿ÕÒì³£
+		//å¤„ç†ç©ºå¼‚å¸¸
 		if(fileName==null || "".equals(fileName)) {
-			throw new RuntimeException("ÎÄ¼şÃû²»ÄÜÎª¿Õ");
+			throw new RuntimeException("æ–‡ä»¶åä¸èƒ½ä¸ºç©º");
 		}
 		if(fileName.indexOf(".")<=-1) {
-			throw new RuntimeException(fileName+":¸ÃÎÄ¼şÃûÃ»ÓĞ°üº¬À©Õ¹Ãû");
+			throw new RuntimeException(fileName+":è¯¥æ–‡ä»¶åæ²¡æœ‰åŒ…å«æ‰©å±•å");
 		}
 		String extName = fileName.substring(fileName.lastIndexOf("."));
 		return extName;
 	}
 	/**
-	 * »ñÈ¡ÏµÍ³µ±Ç°ÓÃ»§Ä¿Â¼
+	 * è·å–ç³»ç»Ÿå½“å‰ç”¨æˆ·ç›®å½•
 	 * @return
 	 */
 	public static String getSystemUserHome() {
@@ -40,7 +35,7 @@ public class FeilUtil {
 	}
 	/**
 	 * @Title: getSystemTempDirectory   
-	 * @Description: ²Ù×÷ÏµÍ³ÁÙÊ±Ä¿Â¼
+	 * @Description: æ“ä½œç³»ç»Ÿä¸´æ—¶ç›®å½•
 	 * @param: @return      
 	 * @return: String      
 	 * @throws
@@ -50,7 +45,7 @@ public class FeilUtil {
 	}
 	/**
 	 * @Title: readTextFileByLine   
-	 * @Description: ¶ÁÈ¡ÎÄ¼şÄÚÈİ   
+	 * @Description: è¯»å–æ–‡ä»¶å†…å®¹   
 	 * @param: @param pathname
 	 * @param: @return      
 	 * @return: String      
@@ -78,7 +73,7 @@ public class FeilUtil {
 	}
 	/**
 	 * @Title: readTextFileOfList   
-	 * @Description: °´ĞĞ¶ÁÈ¡ÎÄ¼şÄÚÈİµ½list¼¯ºÏ   
+	 * @Description: æŒ‰è¡Œè¯»å–æ–‡ä»¶å†…å®¹åˆ°listé›†åˆ   
 	 * @param: @param pathname
 	 * @param: @return      
 	 * @return: List<String>      
@@ -86,7 +81,7 @@ public class FeilUtil {
 	 */
 	public static List<String> readTextFileOfList(String pathname) {
 		BufferedReader br = null;
-		List<String> strList = new ArrayList<String>();
+		List<String> strList = new ArrayList<>();
 		try {
 			br = new BufferedReader(new FileReader(new File(pathname)));
 			do {
@@ -105,7 +100,7 @@ public class FeilUtil {
 	}
 	/**
 	 * @Title: deleteFile   
-	 * @Description: µİ¹éÉ¾³ıÎÄ¼ş   
+	 * @Description: é€’å½’åˆ é™¤æ–‡ä»¶   
 	 * @param: @param file      
 	 * @return: void      
 	 * @throws
@@ -123,7 +118,7 @@ public class FeilUtil {
 	}
 	/**
 	 * @Title: deleteFile   
-	 * @Description: µİ¹éÉ¾³ıÎÄ¼ş  
+	 * @Description: é€’å½’åˆ é™¤æ–‡ä»¶  
 	 * @param: @param filePath      
 	 * @return: void      
 	 * @throws
@@ -133,8 +128,8 @@ public class FeilUtil {
 	}
 	/**
 	 * @Title: getFileSize   
-	 * @Description: »ñµÃÎÄ¼ş´óĞ¡
-	 * ·µ»ØÎÄ¼şÒÔÖ¸¶¨µ¥Î»´óĞ¡±íÊ¾
+	 * @Description: è·å¾—æ–‡ä»¶å¤§å°
+	 * è¿”å›æ–‡ä»¶ä»¥æŒ‡å®šå•ä½å¤§å°è¡¨ç¤º
 	 * File a.txt=2k  
 	 * @param: @param file
 	 * @param: @return      
@@ -155,5 +150,4 @@ public class FeilUtil {
 	public static void main(String[] args) {
 		System.out.println(getSystemTempDirectory());
 	}
-	
 }
